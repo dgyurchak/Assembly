@@ -1,0 +1,10 @@
+#teglalap keruletenek kiszamolasa
+.intel_syntax noprefix
+.globl main
+a:  .4byte   4
+b:  .4byte   6
+main:
+    mov     eax, a
+    add     eax, b
+    imul    eax, 2
+    ret

@@ -1,0 +1,29 @@
+#Comparison operators
+.intel_syntax noprefix
+        .globl     main, a
+        .data
+main:
+    mov ebx, 5
+    mov ecx, 10
+
+    #ebx == ecx
+    cmp ebx, ecx
+    sete al
+
+    #ebx < ecx
+    cmp ebx, ecx
+    setl al
+
+    #ebx > ecx
+    cmp ebx, ecx
+    setg al
+    
+    #ecx >= ebx     #setekkel megvizsgaljuk
+    #setge al
+    #ecx <= ebx
+    #setle al
+    #ecx != ebx
+    #setne al
+    #ecx == ebx
+    ret
+    

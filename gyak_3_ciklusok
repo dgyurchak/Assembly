@@ -1,0 +1,27 @@
+#hatvanyozas
+
+.intel_syntax noprefix
+        .globl     main
+        .globl     a, k, e
+        .data
+a:      .4byte      3
+k:        .4byte      5
+er:      .4byte      1
+
+main:
+        jmp     cond
+body:
+        mov     eax, DWORD PTR [er]
+        mov     ebx, DWORD PTR [a]
+        imul    eax, ebx
+        mov     DWORD PTR [er], eax
+        mov     ebx, DWORD PTR [k]
+        dec     ebx
+        mov     DWORD PTR [k], ebx
+cond:
+    mov eax, DWORD PTR[k]
+    cmp eax, 0
+    jne body
+
+    mov eax, DWORD PTR[er]
+    ret
